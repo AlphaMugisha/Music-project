@@ -1,0 +1,198 @@
+/* --- Global Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #121212; /* Dark background base */
+}
+
+/* Background Blur Effect */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #8e9eab, #eef2f3); /* Matches your gold/earthy vibe */
+    filter: blur(50px);
+    z-index: -1;
+}
+
+/* --- Main Container --- */
+.container {
+    width: 900px;
+    height: 550px;
+    display: flex;
+    background: rgba(255, 255, 255, 0.1); /* Glass effect */
+    backdrop-filter: blur(15px);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    padding: 30px;
+}
+
+/* --- Player Section (Left) --- */
+.player {
+    flex: 1.2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+.img-area {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%; /* Circle Art */
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    border: 5px solid rgba(255, 255, 255, 0.1);
+}
+
+.img-area img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.song-details {
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+}
+
+.song-details h2 { font-size: 28px; }
+.song-details p { opacity: 0.7; font-size: 18px; }
+
+/* Progress Bar */
+.audio-progress {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.progress-bar {
+    height: 6px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+.progress-current {
+    height: 100%;
+    width: 30%; /* This is updated via JS */
+    background: #fff;
+    border-radius: 10px;
+}
+
+.time {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.play-pause {
+    width: 60px;
+    height: 60px;
+    background: white;
+    color: black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+/* --- Playlist Section (Right) --- */
+.playlist {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.playlist-header h3 { color: white; margin-bottom: 15px; }
+
+.search-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-box input {
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    margin-left: 10px;
+    width: 100%;
+}
+
+#playlist-ul {
+    list-style: none;
+    overflow-y: auto;
+    max-height: 350px;
+}
+
+/* Custom Scrollbar */
+#playlist-ul::-webkit-scrollbar { width: 5px; }
+#playlist-ul::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
+
+#playlist-ul li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: 0.3s;
+    color: white;
+}
+
+#playlist-ul li:hover { background: rgba(255, 255, 255, 0.1); }
+
+.list-thumb {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+.list-info span { display: block; font-weight: bold; }
+.list-info p { font-size: 12px; opacity: 0.6; }
