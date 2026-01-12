@@ -331,3 +331,34 @@ body {
     font-size: 12px;
     opacity: 0.6;
 }
+/* --- Glowing Aura Animation for Album Art --- */
+.img-area::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    border-radius: 25px; /* slightly larger than img-area */
+    background: radial-gradient(circle, rgba(59,130,246,0.4), transparent 70%);
+    filter: blur(20px);
+    opacity: 0.6;
+    animation: pulse 3s infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(0.95);
+        opacity: 0.5;
+    }
+}
