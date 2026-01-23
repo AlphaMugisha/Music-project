@@ -64,4 +64,16 @@ prevBtn.addEventListener("click", () => {
 function clicked(index) {
     musicIndex = index;
     loadMusic(musicIndex);
+
+    // --- Keyboard Shortcuts (small enhancement) ---
+document.addEventListener("keydown", (e) => {
+    if (e.code === "ArrowRight") nextBtn.click();
+    if (e.code === "ArrowLeft") prevBtn.click();
+    if (e.code === "Space") {
+        e.preventDefault();
+        playPauseBtn.classList.toggle("fa-play");
+        playPauseBtn.classList.toggle("fa-pause");
+    }
+});
+
 }
